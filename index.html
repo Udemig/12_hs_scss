@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12_hs_scss_temelleri</title>
+    <!-- * Css Bağlantı -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- * Fontawesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- * Scss css ile aynı syntax a sahiptir.Scss i ekstradan sahip olduğu özellikler sebebiyle kullanırız.Scss kodlarını .scss uzantılı dosyalarda yaparız.Fakat bu kullanım sürecinde Html dosyasına .scss uzantılı dosya bağlanmaz.Bunun sebebi tarayıcıların scss okuma yeteneğinin olmamasıdır.
+     
+    
+    * Bu noktada scss in sahip olduğu avantajlardan faydalanmak için bir eklenti indiririz.Bu eklenti 'live sass compiler' dır.Bu eklenti indikten sonra Vscode un alt kısımında yer alan 'watch sass' butonuna tıklanır bu tıklama sonucunda bize style.css ve style.css.map adında 2 dosya oluşturur.
+    Buradaki style.css.map uzantılı dosya bizim için scss kodlarını css e dönüştürür ve style.css dosyasının içerisine aktarır.Bizde bu style.css dosyasını Html e bağlarız.
+    -->
+    <div class="container">
+      <h1 class="title">Scss Nedir ?</h1>
+      <p class="desc">
+        - Scss css 'in tüm özelliklerine sahiptir.Bunun dışında değişkenler,iç
+        içe yazım,moduler dosyalar gibi ekstra özelliklere sahiptir.
+      </p>
+      <h1 class="title">Scss'in Avantajları</h1>
+      <ul class="list">
+        <li class="list-item">Değişkenler</li>
+        <li class="list-item">İç İçe Yazım</li>
+        <li class="list-item">Miras Yapısı</li>
+        <li class="list-item">Modüler Dosyalar</li>
+      </ul>
+      <!-- ! Scss Değişkenler  -->
+      <!-- * Bir projede çalıştığınızı ve bu projede ayrı ayrı yerlerde kullanılan aynı rengin değişmesi gerektiğini düşünelim.Bu noktada bu rengin kullanıldığı her yerde gidip bu değişkliği yapmamız gerekir.Scss değilşkenler kullanımı ile bu güncelleme daha kolay biçimde yapılır. -->
+      <div class="kapsayıcı"></div>
+      <div class="kapsayıcı kp-1"></div>
+      <div class="kapsayıcı kp-2"></div>
+      <div class="kapsayıcı kp-3"></div>
+    </div>
+    <!-- ! Scss İç İçe Yazım -->
+    <header>
+      <div class="logo">
+        <h1>Udemig</h1>
+      </div>
+      <div class="center">
+        <nav>
+          <li><a href="#">Ana Sayfa</a></li>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">İletişim</a></li>
+          <li><a href="#">Eğitimler</a></li>
+        </nav>
+      </div>
+      <div class="right">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </div>
+    </header>
+  </body>
+</html>

@@ -1,3 +1,9 @@
+// Diğer Scss Dosyalarının İmportu
+@import "./left";
+@import "./main";
+@import "./right";
+@import "./mixin";
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +16,9 @@
 body {
   background-color: #333;
   color: white;
+  @include tablet() {
+    background-color: green;
+  }
 }
 .title {
   background-color: bisque;
@@ -66,40 +75,119 @@ $height: 300px;
 // * Scss İç İçe Yazım
 
 // Header Örneği Css ile yazım
+// header {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: 10px 20px;
+//   margin-top: 30px;
+// }
+
+// header .logo h1 {
+//   font-family: Arial, Helvetica, sans-serif;
+//   font-size: 43px;
+// }
+
+// header .center nav {
+//   display: flex;
+//   align-items: center;
+//   gap: 20px;
+// }
+// header .center nav li {
+//   list-style: none;
+// }
+
+// header .center nav li a {
+//   text-decoration: none;
+//   color: white;
+//   font-size: 20px;
+//   transition: all 0.5s;
+// }
+// header .center nav li a:hover {
+//   color: blue;
+// }
+// header .header-right i {
+//   font-size: 30px;
+// }
+// header .header-right i:hover {
+//   color: blue;
+// }
+
+// Header Örneği Scss ile yazım
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   margin-top: 30px;
+  .logo {
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 43px;
+    }
+  }
+  .center {
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+          transition: all 0.5s;
+          &:hover {
+            color: blue;
+          }
+        }
+      }
+    }
+  }
+  .header-right {
+    i {
+      font-size: 30px;
+      @include mini-tablet() {
+        display: none;
+      }
+      &:hover {
+        color: blue;
+      }
+    }
+  }
 }
 
-header .logo h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 43px;
-}
-
-header .center nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-header .center nav li {
-  list-style: none;
-}
-
-header .center nav li a {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
+.btn-2 {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin: 10px;
   transition: all 0.5s;
+  &:hover {
+    transform: scale(1.5);
+  }
 }
-header .center nav li a:hover {
-  color: blue;
+
+.btn-1 {
+  @extend .btn-2;
+  background-color: red;
+  text-decoration: none;
+  color: black;
 }
-header .right i {
-  font-size: 30px;
+
+.btn-3 {
+  @extend .btn-2;
+  background-color: aqua;
 }
-header .right i:hover {
-  color: blue;
+// Scss Moduler Dosya Kullanımı
+/*
+* Scss de birden fazla scss dosyasının bir arada kullanımı ile çok daha kolay bir stillendirme süreci yakalayabiliriz.Bunu yaparken bir tane scss dosyasını ana scss dosyası olarak seçeriz.Bu scss dosyasını Html kısımına bağlarız.Devamında diğer scss dosyalarını oluştururuz.Bu scss dosyaları isimlendirilirken başına '_' konulur.Sonrasında bu yardımcı scss dosyaları ana scss dosyasında import edilir.
+*/
+.wrapper {
+  display: flex;
+  border: 1px solid green;
+  height: 50vh;
 }

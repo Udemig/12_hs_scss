@@ -1,4 +1,21 @@
 @charset "UTF-8";
+.left {
+  background-color: aqua;
+  width: 25%;
+  text-align: center;
+  color: black;
+}
+
+.main {
+  background-color: green;
+  width: 50%;
+}
+
+.right {
+  background-color: darkviolet;
+  width: 25%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +29,11 @@
 body {
   background-color: #333;
   color: white;
+}
+@media (max-width: 1000px) {
+  body {
+    background-color: green;
+  }
 }
 
 .title {
@@ -66,37 +88,66 @@ header {
   padding: 10px 20px;
   margin-top: 30px;
 }
-
 header .logo h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 43px;
 }
-
 header .center nav {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
 header .center nav li {
   list-style: none;
 }
-
 header .center nav li a {
   text-decoration: none;
   color: white;
   font-size: 20px;
   transition: all 0.5s;
 }
-
 header .center nav li a:hover {
   color: blue;
 }
-
-header .right i {
+header .header-right i {
   font-size: 30px;
 }
-
-header .right i:hover {
+@media (max-width: 700px) {
+  header .header-right i {
+    display: none;
+  }
+}
+header .header-right i:hover {
   color: blue;
+}
+
+.btn-2, .btn-3, .btn-1 {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin: 10px;
+  transition: all 0.5s;
+}
+.btn-2:hover, .btn-3:hover, .btn-1:hover {
+  transform: scale(1.5);
+}
+
+.btn-1 {
+  background-color: red;
+  text-decoration: none;
+  color: black;
+}
+
+.btn-3 {
+  background-color: aqua;
+}
+
+/*
+* Scss de birden fazla scss dosyasının bir arada kullanımı ile çok daha kolay bir stillendirme süreci yakalayabiliriz.Bunu yaparken bir tane scss dosyasını ana scss dosyası olarak seçeriz.Bu scss dosyasını Html kısımına bağlarız.Devamında diğer scss dosyalarını oluştururuz.Bu scss dosyaları isimlendirilirken başına '_' konulur.Sonrasında bu yardımcı scss dosyaları ana scss dosyasında import edilir.
+*/
+.wrapper {
+  display: flex;
+  border: 1px solid green;
+  height: 50vh;
 }/*# sourceMappingURL=style.css.map */
